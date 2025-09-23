@@ -3,13 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Medical History - Doctor Chat</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <h1>Helllo world</h1>
-    <h1>Helllo world</h1>
-    <h1>Helllo world</h1>
-    <h1>Helllo world</h1>
-    <h1>Helllo world</h1>
+
+    <header class="navbar dashboard-navbar">
+        <div class="container dashboard-header-container">
+            <a href="patient-dashboard.html" class="logo">Doctor Chat</a>
+            <div class="header-icons">
+                <i class="fas fa-bell"></i>
+                <a href="profile.html"><i class="fas fa-user-circle"></i></a>
+                <a href="login.html" class="btn logout-btn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="history-page-main dashboard-main">
+        <div class="container">
+            <div class="history-header">
+                <h1>Medical History</h1>
+                <p>View your past consultations and medical records</p>
+            </div>
+            
+            <div class="history-actions-bar">
+                <a href="patient-dashboard.html" class="history-action-btn"><i class="fas fa-arrow-left"></i> Dashboard</a>
+                <button class="history-action-btn"><i class="fas fa-filter"></i> Filter</button>
+                <div class="history-search">
+                    <input type="text" placeholder="Search">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="summary-cards-grid">
+                <div class="summary-card">
+                    <span class="summary-count">12</span>
+                    <span class="summary-text">Total Consultations</span>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-count">8</span>
+                    <span class="summary-text">Different Doctors</span>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-count">3</span>
+                    <span class="summary-text">Specializations</span>
+                </div>
+            </div>
+
+            <h2 class="past-consultations-title">Past Consultations</h2>
+
+            <div class="consultation-list">
+                <div class="consultation-card">
+                    <div class="consultation-card-header">
+                        <div class="doctor-info-compact">
+                            <div class="doctor-initials-circle">D.S.</div>
+                            <div>
+                                <h4>Dr. Sarah Johnson</h4>
+                                <p>Cardiology Consultation</p>
+                            </div>
+                        </div>
+                        <div class="consultation-meta">
+                            <span class="consultation-date">Jan 15, 2025</span>
+                            <span class="consultation-type">Video Call</span>
+                        </div>
+                    </div>
+                    <div class="consultation-card-body">
+                        <div class="consultation-section">
+                            <h4>Chief Complaint</h4>
+                            <p>Chest pain and shortness of breath during physical activity.</p>
+                        </div>
+                        <div class="consultation-section">
+                            <h4>Diagnosis</h4>
+                            <p>Exercise-induced chest pain, likely muscular. Recommended stress test.</p>
+                            <div class="badge-group">
+                                <span class="badge-pill prescription-badge">Prescription</span>
+                                <span class="badge-pill followup-badge">Follow-up Needed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="consultation-card-actions">
+                        <a href="#" class="btn btn-outline"><i class="fas fa-file-alt"></i> View Details</a>
+                        <a href="#" class="btn btn-outline"><i class="fas fa-comment-dots"></i> Message Doctor</a>
+                    </div>
+                </div>
+
+                <div class="consultation-card">
+                    <div class="consultation-card-header">
+                        <div class="doctor-info-compact">
+                            <div class="doctor-initials-circle">M.C.</div>
+                            <div>
+                                <h4>Dr. Michael Chen</h4>
+                                <p>Dermatology Consultation</p>
+                            </div>
+                        </div>
+                        <div class="consultation-meta">
+                            <span class="consultation-date">Jan 8, 2025</span>
+                            <span class="consultation-type">Chat</span>
+                        </div>
+                    </div>
+                    <div class="consultation-card-body">
+                        <div class="consultation-section">
+                            <h4>Chief Complaint</h4>
+                            <p>Skin rash on arms and legs, itching for 2 weeks</p>
+                        </div>
+                        <div class="consultation-section">
+                            <h4>Diagnosis</h4>
+                            <p>Contact dermatitis. Prescribed topical corticosteroid cream.</p>
+                            <div class="badge-group">
+                                <span class="badge-pill prescription-badge">Prescription</span>
+                                <span class="badge-pill resolved-badge">Resolved</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="consultation-card-actions">
+                        <a href="#" class="btn btn-outline"><i class="fas fa-file-alt"></i> View Details</a>
+                        <a href="#" class="btn btn-outline"><i class="fas fa-comment-dots"></i> Message Doctor</a>
+                    </div>
+                </div>
+                
+                <div class="consultation-card">
+                    <div class="consultation-card-header">
+                        <div class="doctor-info-compact">
+                            <div class="doctor-initials-circle">E.R.</div>
+                            <div>
+                                <h4>Dr. Emily Rodriguez</h4>
+                                <p>General Practice</p>
+                            </div>
+                        </div>
+                        <div class="consultation-meta">
+                            <span class="consultation-date">Dec 28, 2024</span>
+                            <span class="consultation-type">Video Call</span>
+                        </div>
+                    </div>
+                    <div class="consultation-card-body">
+                        <div class="consultation-section">
+                            <h4>Chief Complaint</h4>
+                            <p>Annual health checkup and routine blood work review</p>
+                        </div>
+                        <div class="consultation-section">
+                            <h4>Assessment</h4>
+                            <p>Overall health is good. Blood pressure and cholesterol levels within normal range. Recommended continued healthy lifestyle.</p>
+                            <div class="badge-group">
+                                <span class="badge-pill normal-badge">Normal Results</span>
+                                <span class="badge-pill lab-results-badge">Lab Results</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="consultation-card-actions">
+                        <a href="#" class="btn btn-outline"><i class="fas fa-file-alt"></i> View Details</a>
+                        <a href="#" class="btn btn-outline"><i class="fas fa-comment-dots"></i> Message Doctor</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
 </body>
 </html>
