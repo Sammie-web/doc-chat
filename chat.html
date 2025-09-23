@@ -320,6 +320,23 @@
     // Initial load: make sure the active chat is displayed
     const initialChatId = document.querySelector('.chat-item.active').getAttribute('data-chat-id');
     showChat(initialChatId);
+
+
+
+    const bellIcon = document.getElementById('notification-bell');
+    const notificationDropdown = document.querySelector('.notifications-dropdown');
+
+    bellIcon.addEventListener('click', () => {
+        notificationDropdown.classList.toggle('show');
+    });
+
+    window.addEventListener('click', function (event) {
+        if (!event.target.matches('#notification-bell') && !event.target.closest('.dropdown-content')) {
+            if (notificationDropdown.classList.contains('show')) {
+                notificationDropdown.classList.remove('show');
+            }
+        }
+    });
 </script>
 
 </html>
