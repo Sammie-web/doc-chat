@@ -566,11 +566,6 @@ p {
     display: none;
 }
 
-/* Re-use of existing styles:
-.logo-container, .page-title, .subtitle, .toggle-buttons, .toggle-btn, .input-group,
-.no-account, .signup-link, .primary-patient-btn, .primary-doctor-btn
-are all re-used from the login page styles.
-*/
 
 /* Media query for smaller screens */
 @media (max-width: 600px) {
@@ -706,6 +701,9 @@ are all re-used from the login page styles.
             "doctors"
             "appointments";
         grid-template-columns: 1fr;
+    }
+    .dashboard-main{
+        padding-right: 20px;
     }
 }
 
