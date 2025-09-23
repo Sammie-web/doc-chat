@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - Doctor Chat</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="navbar dashboard-navbar">
+        <div class="container dashboard-header-container">
+            <a href="patient-dashboard.html" class="logo">Doctor Chat</a>
+            <div class="header-icons">
+                <div class="dropdown">
+                    <i class="fas fa-bell" id="notification-bell"></i>
+                    <div class="dropdown-content notifications-dropdown">
+                        <h4>Notifications</h4>
+                        <ul class="notification-list">
+                            <li>
+                                <p>New message from **Dr. Sarah Johnson**</p>
+                                <small>15 mins ago</small>
+                            </li>
+                            <li>
+                                <p>Your appointment with **Dr. Michael Chen** is confirmed.</p>
+                                <small>1 hour ago</small>
+                            </li>
+                            <li>
+                                <p>Reminder: Your video consultation is at 10:00 AM today.</p>
+                                <small>2 hours ago</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="profile.html"><i class="fas fa-user-circle"></i></a>
+                <a href="login.html" class="btn logout-btn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="chat-body">
+        <section class="chat-main">
+            <div class="chat-main-wrapper">
+                <div class="chat-container">
+                    <aside class="chat-sidebar">
+                        <div class="sidebar-header">
+                            <a href="patient-dashboard.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
+                            <div class="chat-search">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search or start a new chat">
+                            </div>
+                        </div>
+                        <div class="chat-list">
+                            <div class="chat-item active" data-chat-id="sarah-johnson">
+                                <div class="chat-avatar">
+                                    <img src="placeholder-doctor-avatar.png" alt="Dr. Sarah Johnson">
+                                </div>
+                                <div class="chat-info">
+                                    <h4>Dr. Sarah Johnson</h4>
+                                    <p>You: Ok, I will follow your advice.</p>
+                                </div>
+                                <div class="chat-meta">
+                                    <span class="chat-time">8:31 PM</span>
+                                </div>
+                            </div>
+                            <div class="chat-item" data-chat-id="michael-chen">
+                                <div class="chat-avatar">
+                                    <img src="placeholder-doctor-avatar-2.png" alt="Dr. Michael Chen">
+                                </div>
+                                <div class="chat-info">
+                                    <h4>Dr. Michael Chen</h4>
+                                    <p>Hi John, how are you feeling?</p>
+                                </div>
+                                <div class="chat-meta">
+                                    <span class="chat-time">10:45 AM</span>
+                                    <span class="unread-count">2</span>
+                                </div>
+                            </div>
+                            <div class="chat-item" data-chat-id="emily-rodriguez">
+                                <div class="chat-avatar">
+                                    <img src="placeholder-doctor-avatar-3.png" alt="Dr. Emily Rodriguez">
+                                </div>
+                                <div class="chat-info">
+                                    <h4>Dr. Emily Rodriguez</h4>
+                                    <p>I have reviewed your labs.</p>
+                                </div>
+                                <div class="chat-meta">
+                                    <span class="chat-time">Yesterday</span>
+                                </div>
+                            </div>
+                            <div class="chat-item" data-chat-id="ai-chat">
+                                <div class="chat-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="chat-info">
+                                    <h4>AI Chatbot</h4>
+                                    <p>Hello! How can I assist you today?</p>
+                                </div>
+                                <div class="chat-meta">
+                                    <span class="chat-time">2:30 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <section class="chat-window" data-chat-id="sarah-johnson">
+                        <div class="chat-window-header">
+                            <button class="chat-back-btn"><i class="fas fa-arrow-left"></i></button>
+                            <div class="chat-avatar-lg">
+                                <img src="placeholder-doctor-avatar.png" alt="Dr. Sarah Johnson">
+                            </div>
+                            <div class="chat-header-info">
+                                <h3>Dr. Sarah Johnson</h3>
+                                <p>Cardiology | Available now</p>
+                            </div>
+                            <div class="chat-header-actions">
+                                <a href="audio-call.html"><i class="fas fa-phone"></i></a>
+                                <a href="video-call.html"><i class="fas fa-video"></i></a>
+                            </div>
+                        </div>
+                        <div class="chat-messages" id="sarah-johnson-chat">
+                            <div class="message-bubble received">
+                                <p>Hello John, thanks for reaching out. How can I help you today?</p>
+                                <span class="message-time">8:25 PM</span>
+                            </div>
+                            <div class="message-bubble sent">
+                                <p>Hello Dr. Johnson. I’ve been having some chest pains.</p>
+                                <span class="message-time">8:26 PM</span>
+                            </div>
+                            <div class="message-bubble received">
+                                <p>I understand. Could you describe the pain and when it started?</p>
+                                <span class="message-time">8:27 PM</span>
+                            </div>
+                            <div class="message-bubble sent">
+                                <p>It started yesterday morning. It's a dull ache that comes and goes.</p>
+                                <span class="message-time">8:28 PM</span>
+                            </div>
+                            <div class="message-bubble received">
+                                <p>Ok. For now, please rest and avoid any strenuous activities. I'm sending over a
+                                    prescription. Please get it filled and let's schedule a follow-up video call for
+                                    tomorrow morning.</p>
+                                <span class="message-time">8:30 PM</span>
+                            </div>
+                            <div class="message-bubble sent">
+                                <p>Ok, I will follow your advice. Thank you, doctor.</p>
+                                <span class="message-time">8:31 PM</span>
+                            </div>
+                        </div>
+                        <div class="chat-input-area">
+                            <i class="fas fa-paperclip"></i>
+                            <input type="text" placeholder="Type a message">
+                            <i class="fas fa-microphone"></i>
+                            <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </section>
+
+                    <section class="chat-window hidden" data-chat-id="michael-chen">
+                        <div class="chat-window-header">
+                            <button class="chat-back-btn"><i class="fas fa-arrow-left"></i></button>
+                            <div class="chat-avatar-lg">
+                                <img src="placeholder-doctor-avatar-2.png" alt="Dr. Michael Chen">
+                            </div>
+                            <div class="chat-header-info">
+                                <h3>Dr. Michael Chen</h3>
+                                <p>Dermatology | Available in 30 min</p>
+                            </div>
+                            <div class="chat-header-actions">
+                                <a href="audio-call.html"><i class="fas fa-phone"></i></a>
+                                <a href="video-call.html"><i class="fas fa-video"></i></a>
+                            </div>
+                        </div>
+                        <div class="chat-messages" id="michael-chen-chat">
+                            <div class="message-bubble received">
+                                <p>Hello John, how are you feeling today?</p>
+                                <span class="message-time">10:45 AM</span>
+                            </div>
+                            <div class="message-bubble sent">
+                                <p>Hi doctor. My rash seems to be getting worse.</p>
+                                <span class="message-time">10:46 AM</span>
+                            </div>
+                            <div class="message-bubble received">
+                                <p>I see. Please send me a picture of the affected area and I can provide further
+                                    instructions.</p>
+                                <span class="message-time">10:47 AM</span>
+                            </div>
+                        </div>
+                        <div class="chat-input-area">
+                            <i class="fas fa-paperclip"></i>
+                            <input type="text" placeholder="Type a message">
+                            <i class="fas fa-microphone"></i>
+                            <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </section>
+
+                    <section class="chat-window hidden" data-chat-id="emily-rodriguez">
+                        <div class="chat-window-header">
+                            <button class="chat-back-btn"><i class="fas fa-arrow-left"></i></button>
+                            <div class="chat-avatar-lg">
+                                <img src="placeholder-doctor-avatar-3.png" alt="Dr. Emily Rodriguez">
+                            </div>
+                            <div class="chat-header-info">
+                                <h3>Dr. Emily Rodriguez</h3>
+                                <p>General Practice | Available now</p>
+                            </div>
+                            <div class="chat-header-actions">
+                                <a href="audio-call.html"><i class="fas fa-phone"></i></a>
+                                <a href="video-call.html"><i class="fas fa-video"></i></a>
+                            </div>
+                        </div>
+                        <div class="chat-messages" id="emily-rodriguez-chat">
+                            <div class="message-bubble received">
+                                <p>Hi John. I have reviewed your labs from your last check-up. Everything looks good.
+                                </p>
+                                <span class="message-time">Yesterday</span>
+                            </div>
+                            <div class="message-bubble sent">
+                                <p>That's great news, thank you for letting me know!</p>
+                                <span class="message-time">Yesterday</span>
+                            </div>
+                        </div>
+                        <div class="chat-input-area">
+                            <i class="fas fa-paperclip"></i>
+                            <input type="text" placeholder="Type a message">
+                            <i class="fas fa-microphone"></i>
+                            <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </section>
+
+                    <section class="chat-window hidden" data-chat-id="ai-chat">
+                        <div class="chat-window-header">
+                            <button class="chat-back-btn"><i class="fas fa-arrow-left"></i></button>
+                            <div class="chat-avatar-lg">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="chat-header-info">
+                                <h3>AI Chatbot</h3>
+                                <p>Online</p>
+                            </div>
+                            <div class="chat-header-actions">
+                            </div>
+                        </div>
+                        <div class="chat-messages" id="ai-chat-messages">
+                            <div class="message-bubble received">
+                                <p>Hello! I am a medical assistant chatbot. I can help answer common questions, remind
+                                    you
+                                    of your appointments, and provide general health information. Please note that I
+                                    cannot
+                                    give medical advice or a diagnosis. How can I help you today?</p>
+                                <span class="message-time">2:30 PM</span>
+                            </div>
+                        </div>
+                        <div class="chat-input-area">
+                            <input type="text" placeholder="Ask a question">
+                            <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+<script>
+    const chatItems = document.querySelectorAll('.chat-item');
+    const chatWindows = document.querySelectorAll('.chat-window');
+    const chatSidebar = document.querySelector('.chat-sidebar');
+    const chatBackBtns = document.querySelectorAll('.chat-back-btn');
+
+    // Function to handle showing the correct chat window
+    function showChat(chatId) {
+        chatWindows.forEach(window => {
+            if (window.getAttribute('data-chat-id') === chatId) {
+                window.classList.remove('hidden');
+            } else {
+                window.classList.add('hidden');
+            }
+        });
+    }
+
+    // Add click listeners to all chat items
+    chatItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Remove active class from all chat items
+            chatItems.forEach(chat => chat.classList.remove('active'));
+            // Add active class to the clicked chat item
+            item.classList.add('active');
+
+            const chatId = item.getAttribute('data-chat-id');
+            showChat(chatId);
+
+            // On mobile, hide the sidebar and show the chat window
+            if (window.innerWidth <= 768) {
+                chatSidebar.classList.remove('active');
+            }
+        });
+    });
+
+    // Mobile back button functionality
+    chatBackBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                chatSidebar.classList.add('active');
+            }
+        });
+    });
+
+    // Show the sidebar by default on mobile load for first view
+    window.addEventListener('load', () => {
+        if (window.innerWidth <= 768) {
+            chatSidebar.classList.add('active');
+        }
+    });
+
+    // Initial load: make sure the active chat is displayed
+    const initialChatId = document.querySelector('.chat-item.active').getAttribute('data-chat-id');
+    showChat(initialChatId);
+</script>
+
+</html>

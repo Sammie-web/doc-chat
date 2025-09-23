@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Doctor Chat</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <main class="signup-page">
+        <div class="signup-container">
+            <div class="logo-container">
+                <i class="fas fa-heart"></i>
+                <span class="logo-text"><a href="index.html" class="logo">Doctor Chat</a></span>
+            </div>
+            
+            <h1 class="page-title">Join Doctor Chat</h1>
+            <p class="subtitle">Create your account to start connecting with healthcare professionals</p>
+
+            <div class="signup-form-card">
+                <div class="toggle-buttons">
+                    <button class="toggle-btn active" id="patient-btn" data-user-type="patient">Patient Registration</button>
+                    <button class="toggle-btn" id="doctor-btn" data-user-type="doctor">Doctor Registration</button>
+                </div>
+                
+                <form id="signup-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" name="first-name" placeholder="John">
+                        </div>
+                        <div class="input-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" name="last-name" placeholder="Doe">
+                        </div>
+                    </div>
+                    
+                    <div id="patient-fields">
+                        <div class="input-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="age" placeholder="25">
+                        </div>
+                    </div>
+
+                    <div id="doctor-fields" class="hidden">
+                        <div class="input-group">
+                            <label for="specialization">Specialization</label>
+                            <select id="specialization" name="specialization">
+                                <option value="" disabled selected>Select your specialization</option>
+                                <option value="Cardiology">Cardiology</option>
+                                <option value="Dermatology">Dermatology</option>
+                                <option value="Pediatrics">Pediatrics</option>
+                                <option value="Neurology">Neurology</option>
+                                <option value="General">General Practice</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="qualifications">Qualifications</label>
+                            <input type="text" id="qualifications" name="qualifications" placeholder="MD from Harvard Medical School, Board Certified in Cardiology...">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="johndoe@example.com">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••">
+                    </div>
+                    
+                    <button type="submit" class="sign-up-btn primary-patient-btn" data-user-type="patient">Create Patient Account</button>
+                </form>
+            </div>
+            
+            <p class="no-account">Already have an account? <a href="login.html" class="signup-link">Sign in here</a></p>
+        </div>
+    </main>
+    
+    <script>
+        const patientBtn = document.getElementById('patient-btn');
+        const doctorBtn = document.getElementById('doctor-btn');
+        const patientFields = document.getElementById('patient-fields');
+        const doctorFields = document.getElementById('doctor-fields');
+        const emailInput = document.getElementById('email');
+        const signUpBtn = document.querySelector('.sign-up-btn');
+        const firstNameInput = document.getElementById('first-name');
+        const lastNameInput = document.getElementById('last-name');
+
+        patientBtn.addEventListener('click', () => {
+            patientBtn.classList.add('active');
+            doctorBtn.classList.remove('active');
+            patientFields.classList.remove('hidden');
+            doctorFields.classList.add('hidden');
+            emailInput.placeholder = 'johndoe@example.com';
+            firstNameInput.placeholder = 'John';
+            lastNameInput.placeholder = 'Doe';
+            signUpBtn.textContent = 'Create Patient Account';
+            signUpBtn.classList.remove('primary-doctor-btn');
+            signUpBtn.classList.add('primary-patient-btn');
+            signUpBtn.setAttribute('data-user-type', 'patient');
+        });
+
+        doctorBtn.addEventListener('click', () => {
+            doctorBtn.classList.add('active');
+            patientBtn.classList.remove('active');
+            patientFields.classList.add('hidden');
+            doctorFields.classList.remove('hidden');
+            emailInput.placeholder = 'dr.johnson@example.com';
+            firstNameInput.placeholder = 'Sarah';
+            lastNameInput.placeholder = 'Johnson';
+            signUpBtn.textContent = 'Create Doctor Account';
+            signUpBtn.classList.remove('primary-patient-btn');
+            signUpBtn.classList.add('primary-doctor-btn');
+            signUpBtn.setAttribute('data-user-type', 'doctor');
+        });
+        
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const userType = signUpBtn.getAttribute('data-user-type');
+            if (userType === 'patient') {
+                window.location.href = 'patient-dashboard.html';
+            } else if (userType === 'doctor') {
+                window.location.href = 'doctor-dashboard.html';
+            }
+        });
+    </script>
+</body>
+</html>

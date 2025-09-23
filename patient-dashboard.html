@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Doctor Chat</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="navbar dashboard-navbar">
+        <div class="container dashboard-header-container">
+            <a href="#" class="logo">Doctor Chat</a>
+            <div class="header-icons">
+                <div class="dropdown">
+                    <i class="fas fa-bell" id="notification-bell"></i>
+                    <div class="dropdown-content notifications-dropdown">
+                        <h4>Notifications</h4>
+                        <ul class="notification-list">
+                            <li>
+                                <p>New message from **Dr. Sarah Johnson**</p>
+                                <small>15 mins ago</small>
+                            </li>
+                            <li>
+                                <p>Your appointment with **Dr. Michael Chen** is confirmed.</p>
+                                <small>1 hour ago</small>
+                            </li>
+                            <li>
+                                <p>Reminder: Your video consultation is at 10:00 AM today.</p>
+                                <small>2 hours ago</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="profile.html"><i class="fas fa-user-circle"></i></a>
+                <a href="login.html" class="btn logout-btn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="container dashboard-grid">
+            <section class="welcome-section">
+                <h1>Welcome back, John</h1>
+                <p>Here's your health overview</p>
+            </section>
+
+            <section class="card profile-card">
+                <div class="profile-header">
+                    <div class="initials-circle">JD</div>
+                    <div class="profile-info">
+                        <a href="profile.html" class="profile-name">
+                            <h3>John Doe</h3>
+                        </a>
+                        <p>Age: 32 | Patient ID: P001</p>
+                        <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                    </div>
+                </div>
+                <a href="profile.html" class="btn edit-profile-btn">Edit Profile</a>
+            </section>
+
+            <section class="card quick-actions-card">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <a href="chat.html" class="action-item">
+                        <div class="icon-circle-action"><i class="fas fa-comment-dots"></i></div>
+                        <span>Chat Now</span>
+                    </a>
+                    <a href="audio-call.html" class="action-item">
+                        <div class="icon-circle-action"><i class="fas fa-phone"></i></div>
+                        <span>Audio Call</span>
+                    </a>
+                    <a href="video-call.html" class="action-item">
+                        <div class="icon-circle-action"><i class="fas fa-video"></i></div>
+                        <span>Video Call</span>
+                    </a>
+                    <a href="book-visit.html" class="action-item">
+                        <div class="icon-circle-action"><i class="fas fa-calendar-check"></i></div>
+                        <span>Book Visit</span>
+                    </a>
+                    <a href="prescriptions.html" class="action-item">
+                        <div class="icon-circle-action"><i class="fas fa-file-prescription"></i></div>
+                        <span>Prescriptions</span>
+                    </a>
+                    <a href="history.html" class="action-item">
+                        <div class="icon-circle-action"><i class="fas fa-history"></i></div>
+                        <span>History</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="card available-doctors-card">
+                <div class="card-header">
+                    <h2>Available Doctors</h2>
+                    <i class="fas fa-search"></i>
+                </div>
+                <ul class="doctor-list">
+                    <li class="doctor-item">
+                        <div class="doctor-info">
+                            <div class="doctor-initials-circle">D.S.</div>
+                            <div>
+                                <h4>Dr. Sarah Johnson</h4>
+                                <p>Cardiology</p>
+                                <span class="rating">
+                                    <i class="fas fa-star"></i> 4.9
+                                </span>
+                                <span class="available-now">Available now</span>
+                            </div>
+                        </div>
+                        <div class="doctor-actions">
+                            <a href="doc-chat.html" class="action-icon"><i class="fas fa-comment-dots"></i></a>
+                            <a href="audio-call.html" class="action-icon"><i class="fas fa-phone-alt"></i></a>
+                            <a href="video-call.html" class="action-icon"><i class="fas fa-video"></i></a>
+                        </div>
+                    </li>
+                    <li class="doctor-item">
+                        <div class="doctor-info">
+                            <div class="doctor-initials-circle">D.M.C</div>
+                            <div>
+                                <h4>Dr. Michael Chen</h4>
+                                <p>Dermatology</p>
+                                <span class="rating">
+                                    <i class="fas fa-star"></i> 4.8
+                                </span>
+                                <span class="available-in-mins">Available in 30 min</span>
+                            </div>
+                        </div>
+                        <div class="doctor-actions">
+                            <a href="doc-chat.html" class="action-icon"><i class="fas fa-comment-dots"></i></a>
+                            <a href="audio-call.html" class="action-icon"><i class="fas fa-phone-alt"></i></a>
+                            <a href="video-call.html" class="action-icon"><i class="fas fa-video"></i></a>
+                        </div>
+                    </li>
+                    <li class="doctor-item">
+                        <div class="doctor-info">
+                            <div class="doctor-initials-circle">D.E.R</div>
+                            <div>
+                                <h4>Dr. Emily Rodriguez</h4>
+                                <p>General Practice</p>
+                                <span class="rating">
+                                    <i class="fas fa-star"></i> 4.7
+                                </span>
+                                <span class="available-now">Available now</span>
+                            </div>
+                        </div>
+                        <div class="doctor-actions">
+                            <a href="doc-chat.html" class="action-icon"><i class="fas fa-comment-dots"></i></a>
+                            <a href="audio-call.html" class="action-icon"><i class="fas fa-phone-alt"></i></a>
+                            <a href="video-call.html" class="action-icon"><i class="fas fa-video"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="card upcoming-appointments-card">
+                <div class="card-header">
+                    <h2>Upcoming Appointments</h2>
+                    <a href="create-appointment.html" class="create-appointment-btn"><i
+                            class="fas fa-plus-circle"></i></a>
+                </div>
+                <ul class="appointment-list">
+                    <li class="appointment-item">
+                        <div class="appointment-info">
+                            <h4>Dr. Sarah Johnson</h4>
+                            <p>2025-01-22</p>
+                            <p>10:00 AM</p>
+                            <span class="status-badge confirmed-badge">confirmed</span>
+                        </div>
+                        <p class="appointment-type">Video Consultation</p>
+                    </li>
+                    <li class="appointment-item">
+                        <div class="appointment-info">
+                            <h4>Dr. Michael Chen</h4>
+                            <p>2025-01-24</p>
+                            <p>2:30 PM</p>
+                            <span class="status-badge pending-badge">pending</span>
+                        </div>
+                        <p class="appointment-type">Chat Consultation</p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+</body>
+<script>
+    const bellIcon = document.getElementById('notification-bell');
+    const notificationDropdown = document.querySelector('.notifications-dropdown');
+
+    bellIcon.addEventListener('click', () => {
+        notificationDropdown.classList.toggle('show');
+    });
+
+    window.addEventListener('click', function (event) {
+        if (!event.target.matches('#notification-bell') && !event.target.closest('.dropdown-content')) {
+            if (notificationDropdown.classList.contains('show')) {
+                notificationDropdown.classList.remove('show');
+            }
+        }
+    });
+</script>
+
+</html>

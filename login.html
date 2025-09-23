@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Doctor Chat</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <main class="login-page">
+        <div class="login-container">
+            <div class="logo-container">
+                <i class="fas fa-heart"></i>
+                <span class="logo-text"><a href="index.html" class="logo">Doctor Chat</a></span>
+            </div>
+            
+            <h1 class="page-title">Welcome back</h1>
+            <p class="subtitle">Sign in to your account to continue</p>
+
+            <div class="login-form-card">
+                <div class="toggle-buttons">
+                    <button class="toggle-btn active" id="patient-btn">Patient</button>
+                    <button class="toggle-btn" id="doctor-btn">Doctor</button>
+                </div>
+                
+                <form id="login-form">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="patient@example.com">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••">
+                    </div>
+                    
+                    <button type="submit" class="sign-in-btn primary-patient-btn" data-user-type="patient">Sign in as Patient</button>
+                    
+                    <a href="#" class="forgot-password">Forgot your password?</a>
+                </form>
+            </div>
+            
+            <p class="no-account">Don't have an account? <a href="signup.html" class="signup-link">Sign up here</a></p>
+        </div>
+    </main>
+    
+    <script>
+        const patientBtn = document.getElementById('patient-btn');
+        const doctorBtn = document.getElementById('doctor-btn');
+        const emailInput = document.getElementById('email');
+        const signInBtn = document.querySelector('.sign-in-btn');
+
+        patientBtn.addEventListener('click', () => {
+            patientBtn.classList.add('active');
+            doctorBtn.classList.remove('active');
+            emailInput.placeholder = 'patient@example.com';
+            signInBtn.textContent = 'Sign in as Patient';
+            signInBtn.classList.remove('primary-doctor-btn');
+            signInBtn.classList.add('primary-patient-btn');
+            signInBtn.setAttribute('data-user-type', 'patient');
+        });
+
+        doctorBtn.addEventListener('click', () => {
+            doctorBtn.classList.add('active');
+            patientBtn.classList.remove('active');
+            emailInput.placeholder = 'doctor@example.com';
+            signInBtn.textContent = 'Sign in as Doctor';
+            signInBtn.classList.remove('primary-patient-btn');
+            signInBtn.classList.add('primary-doctor-btn');
+            signInBtn.setAttribute('data-user-type', 'doctor');
+        });
+
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const userType = signInBtn.getAttribute('data-user-type');
+            if (userType === 'patient') {
+                window.location.href = 'patient-dashboard.html'; 
+            } else if (userType === 'doctor') {
+                window.location.href = 'doctor-dashboard.html';
+            }
+        });
+    </script>
+</body>
+</html>

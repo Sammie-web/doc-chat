@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Profile - Doctor Chat</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="navbar dashboard-navbar">
+        <div class="container dashboard-header-container">
+            <a href="patient-dashboard.html" class="logo">Doctor Chat</a>
+            <div class="header-icons">
+                <div class="dropdown">
+                    <i class="fas fa-bell" id="notification-bell"></i>
+                    <div class="dropdown-content notifications-dropdown">
+                        <h4>Notifications</h4>
+                        <ul class="notification-list">
+                            <li>
+                                <p>New message from **Dr. Sarah Johnson**</p>
+                                <small>15 mins ago</small>
+                            </li>
+                            <li>
+                                <p>Your appointment with **Dr. Michael Chen** is confirmed.</p>
+                                <small>1 hour ago</small>
+                            </li>
+                            <li>
+                                <p>Reminder: Your video consultation is at 10:00 AM today.</p>
+                                <small>2 hours ago</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="profile.html"><i class="fas fa-user-circle"></i></a>
+                <a href="login.html" class="btn logout-btn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile-page-main dashboard-main">
+        <div class="container">
+            <section class="profile-header-section">
+                <a href="patient-dashboard.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to
+                    Dashboard</a>
+                <h1>Your Profile</h1>
+                <p>Manage your personal information and preferences.</p>
+            </section>
+
+            <div class="profile-content-grid">
+                <div class="card profile-info-card">
+                    <div class="profile-avatar">JD</div>
+                    <h3>John Doe</h3>
+                    <p class="profile-id">Patient ID: P001</p>
+                    <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Account</span>
+                    <button class="btn primary-btn upload-photo-btn">Upload Photo</button>
+                </div>
+
+                <div class="card profile-details-card">
+                    <h2>Personal Details</h2>
+                    <form>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name" value="John" readonly>
+                            </div>
+                            <div class="input-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" value="Doe" readonly>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" value="32" readonly>
+                        </div>
+                        <div class="input-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" disabled>
+                                <option value="male" selected>Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" value="1992-05-15" readonly>
+                        </div>
+                        <div class="input-group">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" value="123 Health St, Wellness City" readonly>
+                        </div>
+                        <button type="button" class="btn primary-btn edit-details-btn">Edit Details</button>
+                        <button type="submit" class="btn primary-btn save-details-btn hidden">Save Changes</button>
+                        <button type="button" class="btn secondary-btn cancel-edit-btn hidden">Cancel</button>
+                    </form>
+                </div>
+
+                <div class="card contact-info-card">
+                    <h2>Contact Information</h2>
+                    <form>
+                        <div class="input-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" value="john.doe@example.com" readonly>
+                        </div>
+                        <div class="input-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" value="+1 (555) 123-4567" readonly>
+                        </div>
+                        <button type="button" class="btn primary-btn edit-contact-btn">Edit Contact</button>
+                        <button type="submit" class="btn primary-btn save-contact-btn hidden">Save Changes</button>
+                        <button type="button" class="btn secondary-btn cancel-contact-btn hidden">Cancel</button>
+                    </form>
+                </div>
+
+                <div class="card security-preferences-card">
+                    <h2>Security & Preferences</h2>
+                    <div class="preference-item">
+                        <span>Change Password</span>
+                        <a href="#" class="btn secondary-btn small-btn">Change</a>
+                    </div>
+                    <div class="preference-item">
+                        <span>Notification Settings</span>
+                        <a href="#" class="btn secondary-btn small-btn">Manage</a>
+                    </div>
+                    <div class="preference-item">
+                        <span>Privacy Settings</span>
+                        <a href="#" class="btn secondary-btn small-btn">Manage</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Re-use notification dropdown script from dashboard
+        const bellIcon = document.getElementById('notification-bell');
+        const notificationDropdown = document.querySelector('.notifications-dropdown');
+
+        if (bellIcon && notificationDropdown) {
+            bellIcon.addEventListener('click', () => {
+                notificationDropdown.classList.toggle('show');
+            });
+
+            window.addEventListener('click', function (event) {
+                if (!event.target.matches('#notification-bell') && !event.target.closest('.dropdown-content')) {
+                    if (notificationDropdown.classList.contains('show')) {
+                        notificationDropdown.classList.remove('show');
+                    }
+                }
+            });
+        }
+
+        // --- Profile Edit Functionality ---
+        function setupEditFunctionality(cardSelector) {
+            const card = document.querySelector(cardSelector);
+            if (!card) return; // Exit if card not found
+
+            const inputs = card.querySelectorAll('input, select');
+            const editBtn = card.querySelector('.edit-details-btn') || card.querySelector('.edit-contact-btn');
+            const saveBtn = card.querySelector('.save-details-btn') || card.querySelector('.save-contact-btn');
+            const cancelBtn = card.querySelector('.cancel-edit-btn') || card.querySelector('.cancel-contact-btn');
+
+            let originalValues = {};
+
+            editBtn.addEventListener('click', () => {
+                inputs.forEach(input => {
+                    originalValues[input.id] = input.value; // Store original value
+                    input.removeAttribute('readonly');
+                    input.removeAttribute('disabled');
+                    input.style.border = '1px solid #4285f4'; // Highlight editable fields
+                });
+                editBtn.classList.add('hidden');
+                saveBtn.classList.remove('hidden');
+                cancelBtn.classList.remove('hidden');
+            });
+
+            cancelBtn.addEventListener('click', () => {
+                inputs.forEach(input => {
+                    input.value = originalValues[input.id]; // Revert to original value
+                    input.setAttribute('readonly', true);
+                    input.setAttribute('disabled', true);
+                    input.style.border = '1px solid #ccc'; // Reset border
+                });
+                editBtn.classList.remove('hidden');
+                saveBtn.classList.add('hidden');
+                cancelBtn.classList.add('hidden');
+            });
+
+            // For a real application, the save button would send data to a backend.
+            // Here, we just revert the UI state.
+            saveBtn.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent form submission for this demo
+                inputs.forEach(input => {
+                    input.setAttribute('readonly', true);
+                    input.setAttribute('disabled', true);
+                    input.style.border = '1px solid #ccc'; // Reset border
+                });
+                editBtn.classList.remove('hidden');
+                saveBtn.classList.add('hidden');
+                cancelBtn.classList.add('hidden');
+                alert('Changes saved (demo)!'); // Simulate save
+            });
+        }
+
+        setupEditFunctionality('.profile-details-card');
+        setupEditFunctionality('.contact-info-card');
+
+    </script>
+</body>
+
+</html>
