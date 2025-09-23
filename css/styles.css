@@ -1718,3 +1718,469 @@ p {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* --- Doctor Dashboard Styles with Grid --- */
+.doctor-dashboard-main {
+    padding-top: 120px;
+    padding-bottom: 40px;
+}
+
+.doctor-dashboard-header {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.doctor-dashboard-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.doctor-dashboard-header p {
+    color: #777;
+    font-size: 1.1rem;
+}
+
+.doctor-dashboard-grid {
+    display: grid;
+    grid-template-areas:
+        "info overview"
+        "availability appointments"
+        "messages messages";
+    grid-template-columns: 350px 1fr;
+    gap: 25px;
+}
+
+.doctor-info-card {
+    grid-area: info;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.doctor-profile-header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.doctor-avatar-large {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f0f4ff;
+}
+
+.profile-details h3 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.profile-details .specialization {
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.rating {
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+
+.profile-meta {
+    margin-bottom: 20px;
+}
+
+.profile-meta p {
+    margin-bottom: 5px;
+}
+
+.status.available {
+    color: #28a745;
+    font-weight: 500;
+}
+
+.edit-profile-btn {
+    width: 100%;
+}
+
+.overview-and-appointments {
+    grid-area: overview / overview / appointments / appointments;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.overview-section {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.overview-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.overview-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.overview-card {
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+.overview-card.appointments { background-color: #6366f1; }
+.overview-card.consultations { background-color: #16a34a; }
+.overview-card.messages { background-color: #f97316; }
+.overview-card.reviews { background-color: #8b5cf6; }
+
+.overview-count {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.overview-label {
+    font-size: 0.9rem;
+}
+
+.upcoming-appointments-section {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+}
+
+.section-header i {
+    color: #777;
+    font-size: 1.5rem;
+}
+
+.appointment-card {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.appointment-info {
+    margin-bottom: 15px;
+}
+
+.appointment-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.appointment-info span {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.appointment-reason {
+    font-style: italic;
+    color: #555;
+    margin-top: 5px;
+}
+
+.appointment-status {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.confirmed-badge { background-color: #e8f5e9; color: #4caf50; }
+.pending-badge { background-color: #fff3e0; color: #ff9800; }
+
+.appointment-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-primary {
+    background-color: #1a237e;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-secondary {
+    background-color: #f0f4ff;
+    color: #1a237e;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover { background-color: #4285f4; }
+.btn-secondary:hover { background-color: #e3f2fd; }
+
+.availability-card {
+    grid-area: availability;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.toggle-switch-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 25px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.working-hours h3,
+.consultation-types h3,
+.quick-status h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.working-hours-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.working-hours-input input {
+    width: 100px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    user-select: none;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.status-options {
+    display: flex;
+    gap: 10px;
+}
+
+.status-btn {
+    background-color: #f0f4ff;
+    color: #1a237e;
+    border: 1px solid #e0e6f0;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.status-btn.active,
+.status-btn:hover {
+    background-color: #1a237e;
+    color: #fff;
+}
+
+.recent-messages-section {
+    grid-area: messages;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.recent-messages-section .section-header .view-all-link {
+    color: #4285f4;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.message-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.message-item:last-child {
+    border-bottom: none;
+}
+
+.message-initials {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #e3f2fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #1a237e;
+    margin-right: 15px;
+    font-size: 0.9rem;
+}
+
+.message-content {
+    flex-grow: 1;
+}
+
+.message-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.message-content p {
+    font-size: 0.9rem;
+    color: #555;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.message-time {
+    font-size: 0.8rem;
+    color: #777;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .doctor-dashboard-grid {
+        grid-template-areas:
+            "info"
+            "overview"
+            "appointments"
+            "availability"
+            "messages";
+        grid-template-columns: 1fr;
+    }
+}
