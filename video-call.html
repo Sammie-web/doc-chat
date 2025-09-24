@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Profile - Doctor Chat</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="video-call-container">
+        <div class="video-interface">
+            <div class="main-video-feed">
+                <img src="https://i.ibb.co/LNx2T8S/doctor-avatar.png" alt="Doctor's video feed">
+                <div class="participant-name-tag">Dr. Sarah Johnson</div>
+            </div>
+            <div class="self-video-feed">
+                <div class="you-tag">You</div>
+            </div>
+            <div class="video-controls">
+                <button class="video-control-btn">
+                    <span class="material-icons">mic</span>
+                </button>
+                <button class="video-control-btn">
+                    <span class="material-icons">videocam</span>
+                </button>
+                <button class="video-control-btn hang-up-btn">
+                    <span class="material-icons">call_end</span>
+                </button>
+                <button class="video-control-btn">
+                    <span class="material-icons">settings</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="call-sidebar">
+            <div class="sidebar-header">
+                <h4>Chat</h4>
+                <span class="live-status">Live</span>
+            </div>
+            <div class="chat-messages">
+                <div class="message received">
+                    <div class="message-bubble">
+                        <span class="sender-name">Dr. Sarah Johnson</span>
+                        <p>Hello John! Can you hear me clearly?</p>
+                    </div>
+                    <span class="timestamp">2 min ago</span>
+                </div>
+                <div class="message sent">
+                    <div class="message-bubble">
+                        <span class="sender-name">You</span>
+                        <p>Yes, audio and video are working fine.</p>
+                    </div>
+                    <span class="timestamp">1 min ago</span>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="type a message...">
+                <button class="send-btn">
+                    <span class="material-icons">send</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="video-call-footer">
+            <span class="call-duration">Call Duration: 5:32</span> |
+            <span class="connection-status">Connection: Excellent</span> |
+            <a href="#" class="switch-link">Switch to Chat</a>
+        </div>
+    </div>
+</body>
+
+</html>
