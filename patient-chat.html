@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Chat</title>
+    <link rel="stylesheet" href="css/chat-style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="chat-container">
+        <div class="conversations-sidebar">
+            <div class="sidebar-header">
+                <a href="doctor-dashboard.html" class="back-button desktop">
+                    <span class="material-icons">arrow_back</span>
+                </a>
+
+                <a href="doctor-dashboard.html" class="back-to-dashboard-mobile mobile">
+                    <span class="material-icons">arrow_back</span>
+                </a>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <span class="material-icons">search</span>
+                </div>
+            </div>
+            <div class="conversations-list">
+                <div class="conversation active">
+                    <div class="avatar">DSJ</div>
+                    <div class="conversation-info">
+                        <div class="conversation-title">Dr. Sarah Johnson</div>
+                        <div class="last-message">I understand your concern...</div>
+                    </div>
+                    <div class="conversation-meta">
+                        <span class="timestamp">10:33 AM</span>
+                        <span class="unread-badge">2 new</span>
+                    </div>
+                </div>
+                <div class="conversation">
+                    <div class="avatar">DMC</div>
+                    <div class="conversation-info">
+                        <div class="conversation-title">Dr. Michael Chen</div>
+                        <div class="last-message">Your test results look good</div>
+                    </div>
+                    <div class="conversation-meta">
+                        <span class="timestamp">Yesterday</span>
+                    </div>
+                </div>
+                <div class="conversation">
+                    <div class="avatar">HAA</div>
+                    <div class="conversation-info">
+                        <div class="conversation-title">Health AI Assistant</div>
+                        <div class="last-message">How can I help you today?</div>
+                    </div>
+                    <div class="conversation-meta">
+                        <span class="timestamp">2 days ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-chat-area">
+            <div class="chat-header">
+                <a href="#" class="back-to-conversations mobile">
+                    <span class="material-icons">arrow_back</span>
+                </a>
+                <div class="header-info">
+                    <div class="avatar">
+                        <img src="https://i.ibb.co/LNx2T8S/doctor-avatar.png" alt="Dr. Sarah Johnson">
+                    </div>
+                    <div class="user-details">
+                        <div class="user-name">Dr. Sarah Johnson</div>
+                        <div class="status">Cardiologist • Online</div>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="video-call.html">
+                        <span class="material-icons">videocam</span>
+                    </a>
+                    <a href="audio-call.html">
+                        <span class="material-icons">call</span>
+                    </a>
+                    <span class="material-icons">more_vert</span>
+                </div>
+            </div>
+
+            <div class="chat-messages">
+                <div class="message received">
+                    <div class="message-bubble">Hello! How are you feeling today?</div>
+                    <span class="timestamp">10:30 AM</span>
+                </div>
+                <div class="message sent">
+                    <div class="message-bubble">Hi Doctor, I've been experiencing some chest pain lately.</div>
+                    <span class="timestamp">10:32 AM</span>
+                </div>
+                <div class="message received">
+                    <div class="message-bubble">I understand your concern. Can you describe the pain? Is it sharp or
+                        dull?</div>
+                    <span class="timestamp">10:33 AM</span>
+                </div>
+                <div class="message sent">
+                    <div class="message-bubble">It's more of a dull ache that comes and goes.</div>
+                    <span class="timestamp">10:35 AM</span>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="message-input" placeholder="Type your message...">
+                <button id="send-button">
+                    <span class="material-icons">send</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatContainer = document.querySelector('.chat-container');
+            const conversationsSidebar = document.querySelector('.conversations-sidebar');
+            const backToConversationsBtn = document.querySelector('.back-to-conversations.mobile');
+            const conversationList = document.querySelectorAll('.conversation');
+            const messageInput = document.getElementById('message-input');
+            const sendButton = document.getElementById('send-button');
+            const chatMessages = document.querySelector('.chat-messages');
+
+            // Handle mobile view navigation
+            if (window.innerWidth <= 768) {
+                conversationsSidebar.classList.remove('hidden');
+                chatContainer.style.gridTemplateColumns = '1fr';
+            }
+
+            conversationList.forEach(item => {
+                item.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        conversationsSidebar.classList.add('hidden');
+                    }
+                });
+            });
+
+            if (backToConversationsBtn) {
+                backToConversationsBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (window.innerWidth <= 768) {
+                        conversationsSidebar.classList.remove('hidden');
+                    }
+                });
+            }
+
+            // Handle dummy message sending
+            if (sendButton) {
+                sendButton.addEventListener('click', sendMessage);
+            }
+            if (messageInput) {
+                messageInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+            }
+
+            function sendMessage() {
+                const messageText = messageInput.value.trim();
+                if (messageText === '') {
+                    return;
+                }
+
+                const newMessage = document.createElement('div');
+                newMessage.className = 'message sent';
+                newMessage.innerHTML = `
+            <div class="message-bubble">${messageText}</div>
+            <span class="timestamp">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+        `;
+                chatMessages.appendChild(newMessage);
+
+                // Clear the input and scroll to the bottom
+                messageInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        });
+    </script>
+</body>
+
+</html>
