@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,9 +16,28 @@
 <body>
     <header class="navbar dashboard-navbar">
         <div class="container dashboard-header-container">
-            <a href="patient-dashboard.html" class="logo">Doctor Chat</a>
+            <a href="index.html" class="logo">Doctor Chat</a>
             <div class="header-icons">
-                <i class="fas fa-bell"></i>
+                <div class="dropdown">
+                    <i class="fas fa-bell" id="notification-bell"></i>
+                    <div class="dropdown-content notifications-dropdown">
+                        <h4>Notifications</h4>
+                        <ul class="notification-list">
+                            <li>
+                                <p>New message from **Dr. Sarah Johnson**</p>
+                                <small>15 mins ago</small>
+                            </li>
+                            <li>
+                                <p>Your appointment with **Dr. Michael Chen** is confirmed.</p>
+                                <small>1 hour ago</small>
+                            </li>
+                            <li>
+                                <p>Reminder: Your video consultation is at 10:00 AM today.</p>
+                                <small>2 hours ago</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <a href="doctor-profile.html"><i class="fas fa-user-circle"></i></a>
                 <a href="login.html" class="btn logout-btn">Logout</a>
             </div>
@@ -251,6 +269,23 @@
                 button.classList.toggle('active');
             });
         });
+    });
+
+
+
+    const bellIcon = document.getElementById('notification-bell');
+    const notificationDropdown = document.querySelector('.notifications-dropdown');
+
+    bellIcon.addEventListener('click', () => {
+        notificationDropdown.classList.toggle('show');
+    });
+
+    window.addEventListener('click', function (event) {
+        if (!event.target.matches('#notification-bell') && !event.target.closest('.dropdown-content')) {
+            if (notificationDropdown.classList.contains('show')) {
+                notificationDropdown.classList.remove('show');
+            }
+        }
     });
 </script>
 

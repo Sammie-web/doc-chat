@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +11,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
 
+<body>
     <!-- Top Navigation Bar -->
     <header class="navbar dashboard-navbar">
         <div class="container dashboard-header-container">
-            <a href="patient-dashboard.html" class="logo">Doctor Chat</a>
+            <a href="index.html" class="logo">Doctor Chat</a>
             <div class="header-icons">
-                <i class="fas fa-bell"></i>
+                <div class="dropdown">
+                    <i class="fas fa-bell" id="notification-bell"></i>
+                    <div class="dropdown-content notifications-dropdown">
+                        <h4>Notifications</h4>
+                        <ul class="notification-list">
+                            <li>
+                                <p>New message from **Dr. Sarah Johnson**</p>
+                                <small>15 mins ago</small>
+                            </li>
+                            <li>
+                                <p>Your appointment with **Dr. Michael Chen** is confirmed.</p>
+                                <small>1 hour ago</small>
+                            </li>
+                            <li>
+                                <p>Reminder: Your video consultation is at 10:00 AM today.</p>
+                                <small>2 hours ago</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <a href="profile.html"><i class="fas fa-user-circle"></i></a>
                 <a href="login.html" class="btn logout-btn">Logout</a>
             </div>
@@ -29,7 +49,8 @@
             <div class="doctor-profile-header">
                 <h1>Your Profile</h1>
                 <p>Manage your professional profile and availability</p>
-                <a href="doctor-dashboard.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+                <a href="doctor-dashboard.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to
+                    Dashboard</a>
             </div>
 
             <div class="profile-page-grid">
@@ -38,7 +59,8 @@
                     <div class="profile-picture-card">
                         <h2>Profile Picture</h2>
                         <div class="profile-image-container">
-                            <img src="https://placehold.co/150x150/A0B2C9/FFFFFF?text=Dr" alt="Doctor Profile" class="profile-image">
+                            <img src="https://placehold.co/150x150/A0B2C9/FFFFFF?text=Dr" alt="Doctor Profile"
+                                class="profile-image">
                             <a href="#" class="upload-link"><i class="fas fa-cloud-upload-alt"></i> Upload Photo</a>
                             <p class="photo-recommendation">Professional photo recommended</p>
                         </div>
@@ -54,7 +76,7 @@
                             </label>
                         </div>
                         <p class="toggle-description">Show as online to patients</p>
-                        
+
                         <div class="toggle-switch-row">
                             <span>Available for Consultation</span>
                             <label class="switch">
@@ -63,12 +85,12 @@
                             </label>
                         </div>
                         <p class="toggle-description">Accept new appointments</p>
-                        
+
                         <div class="custom-status">
                             <h3>Custom Status Message</h3>
                             <input type="text" placeholder="e.g., In surgery until 3 PM">
                         </div>
-                        
+
                         <div class="working-hours">
                             <h3>Working Hours</h3>
                             <div class="working-hours-input">
@@ -135,11 +157,13 @@
                             </div>
                             <div class="form-group full-width">
                                 <label for="education">Education & Qualifications</label>
-                                <textarea id="education">MD from Harvard Medical School. Board Certified in Cardiology, Fellowship at Mayo Clinic</textarea>
+                                <textarea
+                                    id="education">MD from Harvard Medical School. Board Certified in Cardiology, Fellowship at Mayo Clinic</textarea>
                             </div>
                             <div class="form-group full-width">
                                 <label for="bio">Professional Bio</label>
-                                <textarea id="bio" placeholder="Tell patients about your background, approach to care, and areas of expertise..."></textarea>
+                                <textarea id="bio"
+                                    placeholder="Tell patients about your background, approach to care, and areas of expertise..."></textarea>
                             </div>
                         </div>
                     </div>
@@ -173,11 +197,12 @@
                             </div>
                             <div class="form-group full-width">
                                 <label for="practice-address">Practice Address</label>
-                                <input type="text" id="practice-address" value="123 Medical Center Drive, City, State, ZIP">
+                                <input type="text" id="practice-address"
+                                    value="123 Medical Center Drive, City, State, ZIP">
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="profile-actions">
                         <button class="btn btn-secondary cancel-btn">Cancel</button>
                         <button class="btn btn-primary save-btn"><i class="fas fa-save"></i> Save Changes</button>
@@ -188,4 +213,21 @@
     </main>
 
 </body>
+<script>
+    const bellIcon = document.getElementById('notification-bell');
+    const notificationDropdown = document.querySelector('.notifications-dropdown');
+
+    bellIcon.addEventListener('click', () => {
+        notificationDropdown.classList.toggle('show');
+    });
+
+    window.addEventListener('click', function (event) {
+        if (!event.target.matches('#notification-bell') && !event.target.closest('.dropdown-content')) {
+            if (notificationDropdown.classList.contains('show')) {
+                notificationDropdown.classList.remove('show');
+            }
+        }
+    });
+</script>
+
 </html>
