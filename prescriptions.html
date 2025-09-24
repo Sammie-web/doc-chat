@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescriptions - Doctor Chat</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header class="navbar dashboard-navbar">
+        <div class="container dashboard-header-container">
+            <a href="patient-dashboard.html" class="logo">Doctor Chat</a>
+            <div class="header-icons">
+                <div class="dropdown">
+                    <i class="fas fa-bell" id="notification-bell"></i>
+                    <div class="dropdown-content notifications-dropdown">
+                        <h4>Notifications</h4>
+                        <ul class="notification-list">
+                            <li>
+                                <p>New message from **Dr. Sarah Johnson**</p>
+                                <small>15 mins ago</small>
+                            </li>
+                            <li>
+                                <p>Your appointment with **Dr. Michael Chen** is confirmed.</p>
+                                <small>1 hour ago</small>
+                            </li>
+                            <li>
+                                <p>Reminder: Your video consultation is at 10:00 AM today.</p>
+                                <small>2 hours ago</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="profile.html"><i class="fas fa-user-circle"></i></a>
+                <a href="login.html" class="btn logout-btn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="prescription-container">
+        <div class="book-visit-header">
+            <div class="header-text">
+                <h2>My Prescriptions</h2>
+                <p>View and manage your prescriptions</p>
+            </div>
+            <a href="patient-dashboard.html" class="back-to-dashboard-btn">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
+        <div class="prescription-controls">
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Active Prescriptions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Reminders Set</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Low Refills</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Prescribing Doctors</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="active-prescriptions">
+            <div class="section-header">
+                <h3>Active Prescriptions</h3>
+                <span class="pill-badge active-pill">3 Active</span>
+            </div>
+
+            <div class="prescription-card">
+                <div class="card-title">
+                    <div class="med-name">Lisinopril</div>
+                    <div class="med-type">Cardiovascular</div>
+                </div>
+                <div class="card-details">
+                    <div class="detail-row">
+                        <span class="label">Dosage:</span>
+                        <span class="value">10mg</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Frequency:</span>
+                        <span class="value">Once daily</span>
+                    </div>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-row">
+                        <span class="label">Prescribed By:</span>
+                        <span class="value">Dr. Sarah Johnson</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="label">Start Date:</span>
+                        <span class="value">2025-01-16</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="label">End Date:</span>
+                        <span class="value">2025-02-15</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="label">Refill:</span>
+                        <span class="value">2/3</span>
+                    </div>
+                </div>
+                <div class="prescription-sections">
+                    <div class="section instructions">
+                        <div class="section-title">Instructions</div>
+                        <div class="section-text">Take with food in the morning. Monitor blood pressure regularly.</div>
+                    </div>
+                    <div class="section reminder-set">
+                        <div class="section-title">Reminder Set</div>
+                        <div class="section-text">
+                            <span class="material-icons">access_time</span>
+                            <span class="value">Times: 09:00 | Last taken 2025-01-21 08:00</span>
+                        </div>
+                    </div>
+                    <div class="section side-effects">
+                        <div class="section-title">Possible Side Effects</div>
+                        <div class="section-text">Dizziness, Dry cough, Fatigue</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="action-btn-small">
+                        <span class="material-icons">edit</span>
+                        <span>Edit</span>
+                    </button>
+                    <button class="action-btn-small">
+                        <span class="material-icons">replay</span>
+                        <span>Refill</span>
+                    </button>
+                    <button class="action-btn-small">
+                        <span class="material-icons">chat</span>
+                        <span>Contact Dr.</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="prescription-card">
+                <div class="card-title">
+                    <div class="med-name">Metformin</div>
+                    <div class="med-type">Diabetes</div>
+                </div>
+                <div class="card-details">
+                    <div class="detail-row">
+                        <span class="label">Dosage:</span>
+                        <span class="value">500mg</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Frequency:</span>
+                        <span class="value">Once daily</span>
+                    </div>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-row">
+                        <span class="label">Prescribed By:</span>
+                        <span class="value">Dr. Emily Rodriguez</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="label">Start Date:</span>
+                        <span class="value">2025-01-16</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="label">End Date:</span>
+                        <span class="value">2025-04-11</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="label">Refill:</span>
+                        <span class="value">3/5</span>
+                    </div>
+                </div>
+                <div class="prescription-sections">
+                    <div class="section instructions">
+                        <div class="section-title">Instructions</div>
+                        <div class="section-text">Take with breakfast and dinner. May cause stomach upset initially.
+                        </div>
+                    </div>
+                    <div class="section reminder-set">
+                        <div class="section-title">Reminder Set</div>
+                        <div class="section-text">
+                            <span class="material-icons">access_time</span>
+                            <span class="value">Times: 08:00, 18:00 | Last taken 2025-01-21 18:00</span>
+                        </div>
+                    </div>
+                    <div class="section side-effects">
+                        <div class="section-title">Possible Side Effects</div>
+                        <div class="section-text">Nausea, Diarrhea, Metallic taste</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="action-btn-small">
+                        <span class="material-icons">edit</span>
+                        <span>Edit</span>
+                    </button>
+                    <button class="action-btn-small">
+                        <span class="material-icons">replay</span>
+                        <span>Refill</span>
+                    </button>
+                    <button class="action-btn-small">
+                        <span class="material-icons">chat</span>
+                        <span>Contact Dr.</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="prescription-card">
+                <div class="card-title">
+                    <div class="med-name">Vitamin D3</div>
+                    <div class="med-type">Supplement</div>
+                </div>
+                <div class="card-details">
+                    <div class="detail-row">
+                        <span class="label">Dosage:</span>
+                        <span class="value">1000 IU</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Frequency:</span>
+                        <span class="value">Once daily</span>
+                    </div>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-row">
+                        <span class="label">Prescribed By:</span>
+                        <span class="value">Dr. Emily Rodriguez</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="label">Start Date:</span>
+                        <span class="value">2024-12-21</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="label">End Date:</span>
+                        <span class="value">2025-03-21</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="label">Refill:</span>
+                        <span class="value">3/3</span>
+                    </div>
+                </div>
+                <div class="prescription-sections">
+                    <div class="section instructions">
+                        <div class="section-title">Instructions</div>
+                        <div class="section-text">Take with a meal containing fat for better absorption.</div>
+                    </div>
+                    <div class="section reminder-set">
+                        <div class="section-title">Reminder Set</div>
+                        <div class="section-text">
+                            <span class="material-icons">access_time</span>
+                            <span class="value">Times: 09:00 | Last taken 2025-01-21 09:00</span>
+                        </div>
+                    </div>
+                    <div class="section side-effects">
+                        <div class="section-title">Possible Side Effects</div>
+                        <div class="section-text">None</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="action-btn-small">
+                        <span class="material-icons">edit</span>
+                        <span>Edit</span>
+                    </button>
+                    <button class="action-btn-small">
+                        <span class="material-icons">replay</span>
+                        <span>Refill</span>
+                    </button>
+                    <button class="action-btn-small">
+                        <span class="material-icons">chat</span>
+                        <span>Contact Dr.</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="recent-history">
+            <div class="section-header">
+                <h3>Recent History</h3>
+                <a href="#" class="view-all">View All History</a>
+            </div>
+            <div class="history-item">
+                <div class="item-details">
+                    <div class="item-name">Amoxicillin</div>
+                    <div class="item-meta">500mg • Three times daily • Prescribed by Dr. Michael Chen</div>
+                </div>
+                <div class="item-status">
+                    <div class="status-badge completed">Completed</div>
+                    <button class="details-btn">Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

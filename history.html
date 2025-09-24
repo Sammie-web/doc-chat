@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
 
     <header class="navbar dashboard-navbar">
@@ -23,145 +26,166 @@
         </div>
     </header>
 
-    <main class="history-page-main dashboard-main">
-        <div class="container">
-            <div class="history-header">
-                <h1>Medical History</h1>
-                <p>View your past consultations and medical records</p>
+    <div class="history-container">
+        <div class="book-visit-header">
+            <div class="header-text">
+                <h2>History</h2>
+                <p>View your past consultations and medical history</p>
             </div>
-            
-            <div class="history-actions-bar">
-                <a href="patient-dashboard.html" class="history-action-btn"><i class="fas fa-arrow-left"></i> Dashboard</a>
-                <button class="history-action-btn"><i class="fas fa-filter"></i> Filter</button>
-                <div class="history-search">
-                    <input type="text" placeholder="Search">
-                    <i class="fas fa-search"></i>
+            <a href="patient-dashboard.html" class="back-to-dashboard-btn">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
+        <div class="history-controls">
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Total Consultations</div>
                 </div>
-            </div>
-
-            <div class="summary-cards-grid">
-                <div class="summary-card">
-                    <span class="summary-count">12</span>
-                    <span class="summary-text">Total Consultations</span>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Different Doctors</div>
                 </div>
-                <div class="summary-card">
-                    <span class="summary-count">8</span>
-                    <span class="summary-text">Different Doctors</span>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Specializations</div>
                 </div>
-                <div class="summary-card">
-                    <span class="summary-count">3</span>
-                    <span class="summary-text">Specializations</span>
-                </div>
-            </div>
-
-            <h2 class="past-consultations-title">Past Consultations</h2>
-
-            <div class="consultation-list">
-                <div class="consultation-card">
-                    <div class="consultation-card-header">
-                        <div class="doctor-info-compact">
-                            <div class="doctor-initials-circle">D.S.</div>
-                            <div>
-                                <h4>Dr. Sarah Johnson</h4>
-                                <p>Cardiology Consultation</p>
-                            </div>
-                        </div>
-                        <div class="consultation-meta">
-                            <span class="consultation-date">Jan 15, 2025</span>
-                            <span class="consultation-type">Video Call</span>
-                        </div>
-                    </div>
-                    <div class="consultation-card-body">
-                        <div class="consultation-section">
-                            <h4>Chief Complaint</h4>
-                            <p>Chest pain and shortness of breath during physical activity.</p>
-                        </div>
-                        <div class="consultation-section">
-                            <h4>Diagnosis</h4>
-                            <p>Exercise-induced chest pain, likely muscular. Recommended stress test.</p>
-                            <div class="badge-group">
-                                <span class="badge-pill prescription-badge">Prescription</span>
-                                <span class="badge-pill followup-badge">Follow-up Needed</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="consultation-card-actions">
-                        <a href="#" class="btn btn-outline"><i class="fas fa-file-alt"></i> View Details</a>
-                        <a href="#" class="btn btn-outline"><i class="fas fa-comment-dots"></i> Message Doctor</a>
-                    </div>
-                </div>
-
-                <div class="consultation-card">
-                    <div class="consultation-card-header">
-                        <div class="doctor-info-compact">
-                            <div class="doctor-initials-circle">M.C.</div>
-                            <div>
-                                <h4>Dr. Michael Chen</h4>
-                                <p>Dermatology Consultation</p>
-                            </div>
-                        </div>
-                        <div class="consultation-meta">
-                            <span class="consultation-date">Jan 8, 2025</span>
-                            <span class="consultation-type">Chat</span>
-                        </div>
-                    </div>
-                    <div class="consultation-card-body">
-                        <div class="consultation-section">
-                            <h4>Chief Complaint</h4>
-                            <p>Skin rash on arms and legs, itching for 2 weeks</p>
-                        </div>
-                        <div class="consultation-section">
-                            <h4>Diagnosis</h4>
-                            <p>Contact dermatitis. Prescribed topical corticosteroid cream.</p>
-                            <div class="badge-group">
-                                <span class="badge-pill prescription-badge">Prescription</span>
-                                <span class="badge-pill resolved-badge">Resolved</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="consultation-card-actions">
-                        <a href="#" class="btn btn-outline"><i class="fas fa-file-alt"></i> View Details</a>
-                        <a href="#" class="btn btn-outline"><i class="fas fa-comment-dots"></i> Message Doctor</a>
-                    </div>
-                </div>
-                
-                <div class="consultation-card">
-                    <div class="consultation-card-header">
-                        <div class="doctor-info-compact">
-                            <div class="doctor-initials-circle">E.R.</div>
-                            <div>
-                                <h4>Dr. Emily Rodriguez</h4>
-                                <p>General Practice</p>
-                            </div>
-                        </div>
-                        <div class="consultation-meta">
-                            <span class="consultation-date">Dec 28, 2024</span>
-                            <span class="consultation-type">Video Call</span>
-                        </div>
-                    </div>
-                    <div class="consultation-card-body">
-                        <div class="consultation-section">
-                            <h4>Chief Complaint</h4>
-                            <p>Annual health checkup and routine blood work review</p>
-                        </div>
-                        <div class="consultation-section">
-                            <h4>Assessment</h4>
-                            <p>Overall health is good. Blood pressure and cholesterol levels within normal range. Recommended continued healthy lifestyle.</p>
-                            <div class="badge-group">
-                                <span class="badge-pill normal-badge">Normal Results</span>
-                                <span class="badge-pill lab-results-badge">Lab Results</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="consultation-card-actions">
-                        <a href="#" class="btn btn-outline"><i class="fas fa-file-alt"></i> View Details</a>
-                        <a href="#" class="btn btn-outline"><i class="fas fa-comment-dots"></i> Message Doctor</a>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </main>
+
+        <div class="past-consultations">
+            <h2>Past Consultations</h2>
+
+            <div class="consultation-card">
+                <div class="card-header">
+                    <div class="doctor-info">
+                        <div class="avatar">DSJ</div>
+                        <div class="details">
+                            <div class="doctor-name">Dr. Sarah Johnson</div>
+                            <div class="specialty">Cardiology Consultation</div>
+                        </div>
+                    </div>
+                    <div class="consultation-meta">
+                        <div class="date">Jan 15, 2025</div>
+                        <div class="type">Video Call</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="complaint">
+                        <div class="label">Chief Complaint</div>
+                        <div class="text">Chest pain and shortness of breath during physical activity</div>
+                    </div>
+                    <div class="diagnosis">
+                        <div class="label">Diagnosis</div>
+                        <div class="text">Exercise-induced chest pain. Likely muscular. Recommended stress test.</div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag prescription">Prescription</span>
+                        <span class="tag follow-up">Follow-up Needed</span>
+                    </div>
+                    <div class="actions">
+                        <button class="action-btn">
+                            <span class="material-icons">visibility</span>
+                            <span>View Details</span>
+                        </button>
+                        <button class="action-btn">
+                            <span class="material-icons">chat</span>
+                            <span>Message Doctor</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="consultation-card">
+                <div class="card-header">
+                    <div class="doctor-info">
+                        <div class="avatar">MC</div>
+                        <div class="details">
+                            <div class="doctor-name">Dr. Michael Chen</div>
+                            <div class="specialty">Dermatology Consultation</div>
+                        </div>
+                    </div>
+                    <div class="consultation-meta">
+                        <div class="date">Jan 8, 2025</div>
+                        <div class="type">Chat</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="complaint">
+                        <div class="label">Chief Complaint</div>
+                        <div class="text">Skin rash on arms and legs. Itching for 2 weeks</div>
+                    </div>
+                    <div class="diagnosis">
+                        <div class="label">Diagnosis</div>
+                        <div class="text">Contact dermatitis. Prescribed topical corticosteroid cream.</div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag prescription">Prescription</span>
+                        <span class="tag resolved">Resolved</span>
+                    </div>
+                    <div class="actions">
+                        <button class="action-btn">
+                            <span class="material-icons">visibility</span>
+                            <span>View Details</span>
+                        </button>
+                        <button class="action-btn">
+                            <span class="material-icons">chat</span>
+                            <span>Message Doctor</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="consultation-card">
+                <div class="card-header">
+                    <div class="doctor-info">
+                        <div class="avatar">ER</div>
+                        <div class="details">
+                            <div class="doctor-name">Dr. Emily Rodriguez</div>
+                            <div class="specialty">General Practice</div>
+                        </div>
+                    </div>
+                    <div class="consultation-meta">
+                        <div class="date">Dec 28, 2024</div>
+                        <div class="type">Video Call</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="complaint">
+                        <div class="label">Chief Complaint</div>
+                        <div class="text">Annual health checkup and routine blood work review</div>
+                    </div>
+                    <div class="diagnosis">
+                        <div class="label">Assessment</div>
+                        <div class="text">Overall health is good. Blood pressure and cholesterol levels within normal
+                            range. Recommended continued healthy lifestyle.</div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="tags">
+                        <span class="tag prescription">Normal Results</span>
+                        <span class="tag lab-results">Lab Results</span>
+                    </div>
+                    <div class="actions">
+                        <button class="action-btn">
+                            <span class="material-icons">visibility</span>
+                            <span>View Details</span>
+                        </button>
+                        <button class="action-btn">
+                            <span class="material-icons">chat</span>
+                            <span>Message Doctor</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 </body>
+
 </html>
