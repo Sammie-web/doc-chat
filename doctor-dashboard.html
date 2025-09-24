@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Dashboard - Doctor Chat</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/doc-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
 
     <header class="navbar dashboard-navbar">
@@ -23,7 +26,226 @@
         </div>
     </header>
 
-    
+    <div class="doctor-dashboard-container">
+        <div class="dashboard-grid">
+            <div class="profile-card">
+                <div class="doctor-info-header">
+                    <img src="https://i.ibb.co/LNx2T8S/doctor-avatar.png" alt="Dr. Sarah Johnson">
+                    <div class="info">
+                        <div class="doctor-name">Dr. Sarah Johnson</div>
+                        <div class="specialty">Cardiologist</div>
+                        <div class="rating">
+                            <span class="material-icons star">star</span>
+                            <span class="rating-value">4.9 (127 reviews)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="doctor-details">
+                    <p>Experience: <span>12 years</span></p>
+                    <p>License: <span>MD12345</span></p>
+                    <p>Status: <span class="status-indicator available">Available</span></p>
+                </div>
+                <button class="edit-profile-btn">
+                    <span class="material-icons">edit</span>
+                    <span>Edit Profile</span>
+                </button>
+            </div>
+
+            <div class="overview-section">
+                <h3 class="section-title">Today's Overview</h3>
+                <div class="overview-stats">
+                    <div class="stat-item appointments">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Appointments</span>
+                    </div>
+                    <div class="stat-item consultations">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Consultations</span>
+                    </div>
+                    <div class="stat-item new-messages">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">New Messages</span>
+                    </div>
+                    <div class="stat-item pending-reviews">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Pending Reviews</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="availability-section">
+                <h3 class="section-title">Availability Settings</h3>
+                <div class="setting-row">
+                    <span>Available for consultation</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-row time-picker">
+                    <span>Working Hours</span>
+                    <div class="time-inputs">
+                        <span>From</span>
+                        <input type="time" value="09:00">
+                        <span>To</span>
+                        <input type="time" value="17:00">
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <span>Consultation Types</span>
+                    <div class="consultation-types-buttons">
+                        <button class="consultation-type-btn active" data-type="video">
+                            <span class="material-icons">videocam</span>
+                            <span>Video Calls</span>
+                        </button>
+                        <button class="consultation-type-btn active" data-type="audio">
+                            <span class="material-icons">call</span>
+                            <span>Audio Calls</span>
+                        </button>
+                        <button class="consultation-type-btn active" data-type="text">
+                            <span class="material-icons">chat</span>
+                            <span>Text Chat</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="setting-row quick-status-row">
+                    <span>Quick Status</span>
+                    <div class="status-buttons">
+                        <button class="status-btn active" data-status="available">
+                            <span class="material-icons">check_circle</span>
+                            Available
+                        </button>
+                        <button class="status-btn" data-status="busy">
+                            <span class="material-icons">do_not_disturb_on</span>
+                            Busy
+                        </button>
+                        <button class="status-btn" data-status="offline">
+                            <span class="material-icons">cancel</span>
+                            Offline
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointments-section">
+                <div class="section-header">
+                    <h3 class="section-title">Upcoming Appointments</h3>
+                    <span class="material-icons">calendar_today</span>
+                </div>
+                <div class="appointment-list">
+                    <div class="appointment-card">
+                        <div class="appointment-details">
+                            <span class="app-time">10:00 AM</span>
+                            <span class="patient-name">John Doe</span>
+                            <span class="consultation-type">Video Call</span>
+                            <span class="app-reason">Chest pain consultation</span>
+                        </div>
+                        <div class="app-actions">
+                            <span class="app-status confirmed">Confirmed</span>
+                            <div class="action-buttons">
+                                <button class="action-btn-small">Join Video</button>
+                                <button class="action-btn-small">Audio Call</button>
+                                <button class="action-btn-small">Message</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="appointment-card">
+                        <div class="appointment-details">
+                            <span class="app-time">2:30 PM</span>
+                            <span class="patient-name">Alice Smith</span>
+                            <span class="consultation-type">Text Chat</span>
+                            <span class="app-reason">Routine checkup</span>
+                        </div>
+                        <div class="app-actions">
+                            <span class="app-status pending">Pending</span>
+                            <div class="action-buttons">
+                                <button class="action-btn-small confirm">Confirm</button>
+                                <button class="action-btn-small decline">Decline</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="messages-section">
+                <div class="section-header">
+                    <h3 class="section-title">Recent Messages</h3>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="message-list">
+                    <div class="message-item">
+                        <div class="avatar">DSJ</div>
+                        <div class="message-content">
+                            <span class="sender-name">Dr. Sarah Johnson</span>
+                            <span class="message-preview">I understand your concern...</span>
+                        </div>
+                        <div class="message-meta">
+                            <span class="timestamp">10:33 AM</span>
+                            <span class="new-messages-count">2 new</span>
+                        </div>
+                    </div>
+                    <div class="message-item">
+                        <div class="avatar">DMC</div>
+                        <div class="message-content">
+                            <span class="sender-name">Dr. Michael Chen</span>
+                            <span class="message-preview">Your test results look good</span>
+                        </div>
+                        <div class="message-meta">
+                            <span class="timestamp">Yesterday</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const statusButtons = document.querySelectorAll('.status-btn');
+        const statusIndicator = document.querySelector('.status-indicator');
+        const consultationButtons = document.querySelectorAll('.consultation-type-btn');
+
+        // Function to update the doctor's status
+        const updateStatus = (status) => {
+            // Remove active class from all buttons
+            statusButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Set the active class on the clicked button
+            const activeButton = document.querySelector(`.status-btn[data-status="${status}"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+
+            // Update the status indicator text and class
+            statusIndicator.textContent = status.charAt(0).toUpperCase() + status.slice(1);
+            statusIndicator.className = 'status-indicator ' + status;
+        };
+
+        // Add click event listeners to the status buttons
+        statusButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const status = button.getAttribute('data-status');
+                updateStatus(status);
+            });
+        });
+
+        // You can also add a listener for the checkbox to toggle "Available" status
+        const availableSwitch = document.querySelector('.switch input');
+        availableSwitch.addEventListener('change', (event) => {
+            if (event.target.checked) {
+                updateStatus('available');
+            } else {
+                updateStatus('offline');
+            }
+        });
+        consultationButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
 </html>

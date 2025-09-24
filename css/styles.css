@@ -700,7 +700,7 @@ a {
             "doctors"
             "appointments";
         grid-template-columns: 1fr;
-        margin: 0 -25px;
+        margin: 0 -28px;
         width: calc(100% - 360px);
     }
     .dashboard-main{
