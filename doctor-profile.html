@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile - Doctor Chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header class="navbar dashboard-navbar">
+        <div class="container dashboard-header-container">
+            <a href="patient-dashboard.html" class="logo">Doctor Chat</a>
+            <div class="header-icons">
+                <i class="fas fa-bell"></i>
+                <a href="profile.html"><i class="fas fa-user-circle"></i></a>
+                <a href="login.html" class="btn logout-btn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="doctor-profile-main dashboard-main">
+        <div class="container">
+            <div class="doctor-profile-header">
+                <h1>Doctor Profile</h1>
+                <p>Manage your professional profile and availability</p>
+                <a href="doctor-dashboard.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+            </div>
+
+            <div class="profile-page-grid">
+                <!-- Profile Picture & Status Section (Left) -->
+                <div class="profile-left-column">
+                    <div class="profile-picture-card">
+                        <h2>Profile Picture</h2>
+                        <div class="profile-image-container">
+                            <img src="https://placehold.co/150x150/A0B2C9/FFFFFF?text=Dr" alt="Doctor Profile" class="profile-image">
+                            <a href="#" class="upload-link"><i class="fas fa-cloud-upload-alt"></i> Upload Photo</a>
+                            <p class="photo-recommendation">Professional photo recommended</p>
+                        </div>
+                    </div>
+
+                    <div class="status-availability-card">
+                        <h2>Status & Availability</h2>
+                        <div class="toggle-switch-row">
+                            <span>Online Status</span>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <p class="toggle-description">Show as online to patients</p>
+                        
+                        <div class="toggle-switch-row">
+                            <span>Available for Consultation</span>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <p class="toggle-description">Accept new appointments</p>
+                        
+                        <div class="custom-status">
+                            <h3>Custom Status Message</h3>
+                            <input type="text" placeholder="e.g., In surgery until 3 PM">
+                        </div>
+                        
+                        <div class="working-hours">
+                            <h3>Working Hours</h3>
+                            <div class="working-hours-input">
+                                <span>From</span>
+                                <input type="time" value="09:00">
+                                <span>To</span>
+                                <input type="time" value="17:00">
+                            </div>
+                        </div>
+                        <div class="consultation-types">
+                            <h3>Consultation Types</h3>
+                            <label class="checkbox-container">Video Calls
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">Text Chat
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Information & Practice Details (Right) -->
+                <div class="profile-right-column">
+                    <div class="professional-info-card">
+                        <h2>Professional Information</h2>
+                        <div class="form-grid-2-col">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name" value="Sarah">
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" value="Johnson">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" value="dr.sarah.johnson@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" value="+1 (555) 234-5678">
+                            </div>
+                            <div class="form-group">
+                                <label for="specialization">Primary Specialization</label>
+                                <select id="specialization">
+                                    <option>Select specialization</option>
+                                    <option selected>Cardiology</option>
+                                    <option>Dermatology</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="license">Medical License Number</label>
+                                <input type="text" id="license" value="MD12345">
+                            </div>
+                            <div class="form-group">
+                                <label for="experience">Years of Experience</label>
+                                <input type="number" id="experience" value="12">
+                            </div>
+                            <div class="form-group">
+                                <label for="languages">Languages Spoken</label>
+                                <input type="text" id="languages" value="English, Spanish, French">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="education">Education & Qualifications</label>
+                                <textarea id="education">MD from Harvard Medical School. Board Certified in Cardiology, Fellowship at Mayo Clinic</textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="bio">Professional Bio</label>
+                                <textarea id="bio" placeholder="Tell patients about your background, approach to care, and areas of expertise..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="consultation-fees-card">
+                        <h2>Consultation Fees</h2>
+                        <div class="form-grid-2-col">
+                            <div class="form-group">
+                                <label for="video-fee">Video Consultation Fee</label>
+                                <div class="input-with-icon">
+                                    <span>$</span>
+                                    <input type="number" id="video-fee" value="50">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="chat-fee">Chat Consultation Fee</label>
+                                <div class="input-with-icon">
+                                    <span>$</span>
+                                    <input type="number" id="chat-fee" value="30">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-info-card">
+                        <h2>Practice Information</h2>
+                        <div class="form-grid-2-col">
+                            <div class="form-group full-width">
+                                <label for="clinic-name">Clinic/Hospital Name</label>
+                                <input type="text" id="clinic-name" value="City General Hospital">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="practice-address">Practice Address</label>
+                                <input type="text" id="practice-address" value="123 Medical Center Drive, City, State, ZIP">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-actions">
+                        <button class="btn btn-secondary cancel-btn">Cancel</button>
+                        <button class="btn btn-primary save-btn"><i class="fas fa-save"></i> Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -2749,3 +2749,214 @@ textarea {
         border-radius: 10px;
     }
 }
+
+/* --- Doctor Profile Styles --- */
+.doctor-profile-main {
+    padding-top: 120px;
+    padding-bottom: 40px;
+}
+
+.doctor-profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.doctor-profile-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.doctor-profile-header p {
+    color: #777;
+    font-size: 1.1rem;
+}
+
+.back-link {
+    color: #4285f4;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.back-link i {
+    margin-right: 5px;
+}
+
+.profile-page-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 25px;
+}
+
+.profile-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.profile-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.profile-picture-card,
+.status-availability-card,
+.professional-info-card,
+.consultation-fees-card,
+.practice-info-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.profile-picture-card h2,
+.status-availability-card h2,
+.professional-info-card h2,
+.consultation-fees-card h2,
+.practice-info-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.profile-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.upload-link {
+    color: #4285f4;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.upload-link i {
+    margin-right: 8px;
+}
+
+.photo-recommendation {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.toggle-description {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    margin-left: 30px;
+}
+
+.custom-status {
+    margin-top: 20px;
+}
+
+.custom-status h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.custom-status input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.form-grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.input-with-icon {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+.input-with-icon span {
+    font-size: 1.2rem;
+    color: #777;
+    margin-right: 5px;
+}
+
+.input-with-icon input {
+    border: none;
+    padding: 10px 0;
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.save-btn i {
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .profile-page-grid {
+        grid-template-columns: 1fr;
+    }
+    .doctor-profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .back-link {
+        margin-top: 10px;
+    }
+    .form-grid-2-col {
+        grid-template-columns: 1fr;
+    }
+}
