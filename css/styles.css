@@ -707,6 +707,9 @@ p {
     .dashboard-main{
         padding-right: 20px;
     }
+    .notifications-dropdown {
+        right: -40px;
+    }
 }
 
 .welcome-section {
