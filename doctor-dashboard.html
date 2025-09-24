@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Dashboard - Doctor Chat</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/doc-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
 
     <header class="navbar dashboard-navbar">
@@ -22,5 +25,56 @@
             </div>
         </div>
     </header>
+
+    
+
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const statusButtons = document.querySelectorAll('.status-btn');
+        const statusIndicator = document.querySelector('.status-indicator');
+        const consultationButtons = document.querySelectorAll('.consultation-type-btn');
+
+        // Function to update the doctor's status
+        const updateStatus = (status) => {
+            // Remove active class from all buttons
+            statusButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Set the active class on the clicked button
+            const activeButton = document.querySelector(`.status-btn[data-status="${status}"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+
+            // Update the status indicator text and class
+            statusIndicator.textContent = status.charAt(0).toUpperCase() + status.slice(1);
+            statusIndicator.className = 'status-indicator ' + status;
+        };
+
+        // Add click event listeners to the status buttons
+        statusButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const status = button.getAttribute('data-status');
+                updateStatus(status);
+            });
+        });
+
+        // You can also add a listener for the checkbox to toggle "Available" status
+        const availableSwitch = document.querySelector('.switch input');
+        availableSwitch.addEventListener('change', (event) => {
+            if (event.target.checked) {
+                updateStatus('available');
+            } else {
+                updateStatus('offline');
+            }
+        });
+        consultationButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
 </html>
