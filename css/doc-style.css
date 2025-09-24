@@ -1,0 +1,471 @@
+.doctor-dashboard-container {
+    padding: 20px;
+    background-color: #f0f2f5;
+    flex-grow: 1;
+    margin-top: 70px;
+}
+.welcome-section {
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 150px;
+}
+
+.welcome-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.welcome-subheading {
+    font-size: 16px;
+    color: #777;
+    margin: 5px 0 0;
+}
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-card,
+.overview-section,
+.availability-section,
+.appointments-section,
+.messages-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.profile-card {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.overview-section {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.availability-section {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.appointments-section {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.messages-section {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Profile Card */
+.doctor-info-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.doctor-info-header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.doctor-info-header .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.doctor-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #777;
+}
+
+.star {
+    color: #ffc107;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.doctor-details {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.doctor-details p {
+    margin: 5px 0;
+}
+
+.edit-profile-btn {
+    width: 100%;
+    background-color: #f0f2f5;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Overview Stats */
+.overview-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.stat-item {
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.stat-item.appointments {
+    background-color: #eaf3ff;
+}
+
+.stat-item.consultations {
+    background-color: #e6f7e9;
+}
+
+.stat-item.new-messages {
+    background-color: #f0f5ff;
+}
+
+.stat-item.pending-reviews {
+    background-color: #fff0e0;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Availability Settings */
+.availability-section .setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.setting-row span {
+    font-size: 14px;
+    color: #555;
+}
+
+.time-inputs {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.time-inputs input {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+.consultation-types-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.consultation-type-btn {
+    background-color: #f0f2f5;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 8px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #555;
+    transition: all 0.2s ease;
+}
+
+.consultation-type-btn .material-icons {
+    font-size: 16px;
+    color: #007bff;
+}
+
+.consultation-type-btn.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.consultation-type-btn.active .material-icons {
+    color: #fff;
+}
+
+.status-buttons {
+    display: flex;
+    background-color: #f0f2f5;
+    border-radius: 8px;
+    padding: 5px;
+    gap: 5px;
+}
+
+.status-btn {
+    border: none;
+    background-color: transparent;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.status-btn.active {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #007bff;
+}
+
+.status-btn.active .material-icons {
+    color: #007bff;
+}
+
+.status-indicator {
+    font-weight: bold;
+}
+
+.status-indicator.available {
+    color: #28a745;
+}
+
+.status-indicator.busy {
+    color: #ffc107;
+}
+
+.status-indicator.offline {
+    color: #dc3545;
+}
+
+/* Appointments Section */
+.appointments-section .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.appointments-section .material-icons {
+    color: #777;
+}
+
+.appointment-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.appointment-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-time {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+.patient-name, .consultation-type, .app-reason {
+    font-size: 14px;
+    color: #555;
+}
+
+.app-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.app-status {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.app-status.confirmed {
+    background-color: #e6f7e9;
+    color: #28a745;
+}
+
+.app-status.pending {
+    background-color: #fff0e0;
+    color: #ffc107;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.action-btn-small {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.action-btn-small.confirm {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+}
+
+.action-btn-small.decline {
+    background-color: #fff;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+}
+
+/* Recent Messages Section */
+.messages-section .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.message-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.message-item .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.message-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.sender-name {
+    font-weight: bold;
+}
+
+.message-preview {
+    font-size: 14px;
+    color: #777;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.message-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 12px;
+    color: #999;
+}
+
+.new-messages-count {
+    background-color: #007bff;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Mobile Adjustments for Doctor Dashboard */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        margin: 0 -8px;
+        width: calc(70% - 360px);
+    }
+    .profile-card,
+    .overview-section,
+    .availability-section,
+    .appointments-section,
+    .messages-section {
+        grid-column: 1 / 2;
+    }
+    .overview-stats {
+        flex-direction: column;
+    }
+    .status-buttons {
+        flex-wrap: wrap;
+    }
+    .appointment-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .app-actions {
+        width: 100%;
+        align-items: flex-start;
+    }
+    .welcome-section{
+        margin-left: 0px;
+    }
+}
