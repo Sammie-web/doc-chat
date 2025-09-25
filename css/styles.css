@@ -705,7 +705,7 @@ a {
             "appointments";
         grid-template-columns: 1fr;
         margin: 0 -28px;
-        width: calc(100% - 360px);
+        /* width: calc(100% - 360px); */
     }
     .dashboard-main{
         padding-right: 20px;
