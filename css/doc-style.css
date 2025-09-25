@@ -440,7 +440,7 @@
 @media (max-width: 768px) {
     .dashboard-grid {
         grid-template-columns: 1fr;
-        margin: 0 12px;
+        margin: 0 -12px;
         width: calc(70% - 360px);
     }
     .profile-card,
