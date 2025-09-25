@@ -169,6 +169,7 @@ a {
 .how-it-works-section {
     text-align: center;
     padding: 80px 0;
+    background: linear-gradient(135deg, #37209e 0%, #9287b4 100%);
 }
 
 .how-it-works-section h2 {
