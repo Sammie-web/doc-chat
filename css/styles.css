@@ -2077,7 +2077,7 @@ a {
 
 
 /* Audio Call Page Specific Styles */
-body {
+.audio-call-page {
     background: linear-gradient(135deg, #1f1c2c 0%, #9287b4 100%);
 }
 
