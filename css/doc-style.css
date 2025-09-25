@@ -232,6 +232,9 @@
     color: #fff;
     border-color: #007bff;
 }
+.consultation-type-btn.active>span {
+    color: #fff;
+}
 
 .consultation-type-btn.active .material-icons {
     color: #fff;
@@ -440,7 +443,7 @@
 @media (max-width: 768px) {
     .dashboard-grid {
         grid-template-columns: 1fr;
-        margin: 0 -12px;
+        margin: 0 -15px;
         width: calc(70% - 480px);
     }
     .profile-card,
