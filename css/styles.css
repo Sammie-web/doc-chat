@@ -715,6 +715,25 @@ a {
     }
 }
 
+@media (max-width: 450px) {
+    .dashboard-grid {
+        grid-template-areas:
+            "welcome"
+            "profile"
+            "quick-actions"
+            "doctors"
+            "appointments";
+        grid-template-columns: 1fr;
+        margin: 0 -25px;
+        width: calc(100% - 300px);
+    }
+    .dashboard-main{
+        padding-right: 20px;
+    }
+    .notifications-dropdown {
+        right: -40px;
+    }
+}
 
 .welcome-section {
     grid-area: welcome;
