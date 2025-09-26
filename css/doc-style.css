@@ -444,7 +444,7 @@
     .dashboard-grid {
         grid-template-columns: 1fr;
         margin: 0 -15px;
-        width: calc(100% - 480px);
+        width: calc(65% - 480px);
     }
     .profile-card,
     .overview-section,
