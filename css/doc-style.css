@@ -468,11 +468,16 @@
     .appointments-section,
     .messages-section {
         grid-column: 1 / 2;
+        grid-row: auto;
     }
 
     .overview-stats {
         flex-direction: column;
     }
+
+    /* .appointments-section{
+        margin-top: 70vh;
+    } */
 
     .status-buttons {
         flex-wrap: wrap;
